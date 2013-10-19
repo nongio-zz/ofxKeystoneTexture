@@ -1,6 +1,6 @@
-#include "ofxMeshTexture.h"
+#include "ofxKeystoneTexture.h"
 
-ofxMeshTexture::ofxMeshTexture(){
+ofxKeystoneTexture::ofxKeystoneTexture(){
     setGridSize(10, 10);
     
     p[0] = ofPoint(-0.5  , -0.5);
@@ -12,22 +12,22 @@ ofxMeshTexture::ofxMeshTexture(){
 
     mesh.setMode(OF_PRIMITIVE_TRIANGLE_STRIP);
 }
-ofxMeshTexture::~ofxMeshTexture(){
+ofxKeystoneTexture::~ofxKeystoneTexture(){
 
 }
 
-void ofxMeshTexture::setGridSize(int w, int h){
+void ofxKeystoneTexture::setGridSize(int w, int h){
     grid_size_width = w;
     grid_size_height = h;
     updatePoints();
 }
-void ofxMeshTexture::draw(){
+void ofxKeystoneTexture::draw(){
     tex.bind();
     mesh.draw();
     tex.unbind();
 }
 
-void ofxMeshTexture::setTexture(ofTexture & t){
+void ofxKeystoneTexture::setTexture(ofTexture & t){
     tex = t;
     p[0] = ofPoint(-0.5*t.getWidth(),   -0.5*t.getHeight());
     p[1] = ofPoint(0.5*t.getWidth(),    -0.5*t.getHeight());
@@ -38,23 +38,23 @@ void ofxMeshTexture::setTexture(ofTexture & t){
     updatePoints();
 }
 
-void ofxMeshTexture::setPoint(int which, float x, float y){
+void ofxKeystoneTexture::setPoint(int which, float x, float y){
     p[which].x = x;
     p[which].y = y;
     
     updatePoints();
 }
 
-ofPoint ofxMeshTexture::getPoint(int which){
+ofPoint ofxKeystoneTexture::getPoint(int which){
     return p[which];
 }
 
-void ofxMeshTexture::setPoints(ofPoint pts[4]){
+void ofxKeystoneTexture::setPoints(ofPoint pts[4]){
     for(int i=0; i < 4; i++)
         p[i] = pts[i];
 }
 
-void ofxMeshTexture::updatePoints(){
+void ofxKeystoneTexture::updatePoints(){
 
     mesh.clear();
     float x_res = 1.0/(grid_size_width-1);

@@ -2,10 +2,10 @@
 
 #include "ofMain.h"
 
-class ofxMeshTexture {
+class ofxKeystoneTexture {
 public:
-    ofxMeshTexture();
-    ~ofxMeshTexture();
+    ofxKeystoneTexture();
+    ~ofxKeystoneTexture();
 
     void setGridSize(int w, int h);
 //    ofTexture & getTextureReference();
