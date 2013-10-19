@@ -1,7 +1,7 @@
 #pragma once
 
 #include "ofMain.h"
-#include "ofxMeshTexture.h"
+#include "ofxKeystoneTexture.h"
 
 class testApp : public ofBaseApp{
 	public:
@@ -23,5 +23,5 @@ class testApp : public ofBaseApp{
         void moveUp();
         void moveDown();
     
-    ofxMeshTexture mtex;
+    ofxKeystoneTexture ktex;
 };

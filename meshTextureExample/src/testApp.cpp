@@ -8,7 +8,7 @@ int current_point = 0;
 //--------------------------------------------------------------
 void testApp::setup(){
     img.loadImage("fill.png");
-    mtex.setTexture(img.getTextureReference());
+    ktex.setTexture(img.getTextureReference());
 
 }
 
@@ -27,9 +27,9 @@ void testApp::draw(){
     glPointSize(10.0);
     
     ofTranslate(200, 200);
-    mtex.draw();
+    ktex.draw();
     ofNoFill();
-    ofCircle(mtex.getPoint(current_point), 10);
+    ofCircle(ktex.getPoint(current_point), 10);
 }
 
 //--------------------------------------------------------------
@@ -59,20 +59,20 @@ void testApp::keyReleased(int key){
 
 }
 void testApp::moveLeft(){
-    ofPoint c = mtex.getPoint(current_point);
-    mtex.setPoint(current_point, c.x-step, c.y);
+    ofPoint c = ktex.getPoint(current_point);
+    ktex.setPoint(current_point, c.x-step, c.y);
 }
 void testApp::moveRight(){
-    ofPoint c = mtex.getPoint(current_point);
-    mtex.setPoint(current_point, c.x+step, c.y);
+    ofPoint c = ktex.getPoint(current_point);
+    ktex.setPoint(current_point, c.x+step, c.y);
 }
 void testApp::moveUp(){
-    ofPoint c = mtex.getPoint(current_point);
-    mtex.setPoint(current_point, c.x, c.y-step);
+    ofPoint c = ktex.getPoint(current_point);
+    ktex.setPoint(current_point, c.x, c.y-step);
 }
 void testApp::moveDown(){
-    ofPoint c = mtex.getPoint(current_point);
-    mtex.setPoint(current_point, c.x, c.y+step);
+    ofPoint c = ktex.getPoint(current_point);
+    ktex.setPoint(current_point, c.x, c.y+step);
 }
 //--------------------------------------------------------------
 void testApp::mouseMoved(int x, int y){
