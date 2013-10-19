@@ -1,7 +1,7 @@
 #include "ofxMeshTexture.h"
 
 ofxMeshTexture::ofxMeshTexture(){
-    setGridSize(100, 100);
+    setGridSize(10, 10);
     
     p[0] = ofPoint(-0.5  , -0.5);
     p[1] = ofPoint(0.5, -0.5);
@@ -23,7 +23,7 @@ void ofxMeshTexture::setGridSize(int w, int h){
 }
 void ofxMeshTexture::draw(){
     tex.bind();
-    mesh.drawWireframe();
+    mesh.draw();
     tex.unbind();
 }
 
